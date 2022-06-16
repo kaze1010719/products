@@ -22,5 +22,11 @@ while True:
 print(products)
 print(products[1][0])
 
+
 for p in products:
 	print(p[0], '的價格是', p[1])
+
+
+with open('products.csv', 'w') as f:  # open只有打開而已，還沒寫入
+	for p in products:
+		f.write(p[0] + ',' + p[1] + '\n')  # 才有真正寫入
